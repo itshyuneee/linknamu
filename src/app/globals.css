@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg-from: #fff8ef; /* 크림 */
+  --bg-to: #fde2cf; /* 연한 살구 */
+  --foreground: #3a2c25; /* 따뜻한 짙은 갈색 */
+  --accent: #f4a274;
+  --accent-soft: #ffd9bd;
+  --glass: rgb(255 255 255 / 0.45);
+  --glass-hover: rgb(255 255 255 / 0.62);
+  --glass-border: rgb(255 255 255 / 0.7);
+  --shadow-tint: rgb(160 90 50 / 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-from: #241b17;
+    --bg-to: #3a261d;
+    --foreground: #f6ebe3;
+    --accent: #c4673a;
+    --accent-soft: #6b3d27;
+    --glass: rgb(255 255 255 / 0.07);
+    --glass-hover: rgb(255 255 255 / 0.12);
+    --glass-border: rgb(255 255 255 / 0.12);
+    --shadow-tint: rgb(0 0 0 / 0.35);
   }
 }
 
+@theme inline {
+  --color-background: var(--bg-from);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-glass: var(--glass);
+  --color-glass-hover: var(--glass-hover);
+  --color-glass-border: var(--glass-border);
+  --color-shadow-tint: var(--shadow-tint);
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
 body {
-  background: var(--background);
+  background: linear-gradient(160deg, var(--bg-from) 0%, var(--bg-to) 100%)
+    fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  word-break: keep-all;
 }

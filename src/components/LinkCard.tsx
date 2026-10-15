@@ -18,7 +18,7 @@ export default function LinkCard({ id, title, url }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={trackClick}
-      className="block w-full rounded-2xl border border-foreground/15 bg-background px-5 py-4 text-center font-medium shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
+      className="block w-full rounded-2xl border border-glass-border bg-glass px-6 py-4 text-center text-[15px] font-semibold tracking-tight shadow-[0_6px_24px_-12px_var(--color-shadow-tint)] backdrop-blur-xl transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-glass-hover hover:shadow-[0_10px_28px_-12px_var(--color-shadow-tint)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:translate-y-0 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
     >
       {title}
     </a>
